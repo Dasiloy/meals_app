@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:meals_app/screens/categories_screen.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 import 'package:meals_app/theme/theme.dart';
+import 'package:meals_app/screens/tab_screen.dart';
 
 void main() {
   runApp(
-    MaterialApp(
-      theme: theme,
-      darkTheme: darkTheme,
-      themeMode: ThemeMode.system,
-      home: App(),
+    ProviderScope(
+      child: MaterialApp(
+        theme: theme,
+        darkTheme: darkTheme,
+        themeMode: ThemeMode.system,
+        home: App(),
+      ),
     ),
   );
 }
@@ -17,7 +21,7 @@ class App extends StatefulWidget {
   const App({super.key});
 
   @override
-  State<StatefulWidget> createState() {
+  State<App> createState() {
     return _App();
   }
 }
@@ -25,6 +29,6 @@ class App extends StatefulWidget {
 class _App extends State<App> {
   @override
   Widget build(BuildContext context) {
-    return CategoriesScreen();
+    return const TabScreen();
   }
 }
