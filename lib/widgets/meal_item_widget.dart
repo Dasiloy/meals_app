@@ -30,12 +30,15 @@ class MealItem extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
         child: Stack(
           children: [
-            FadeInImage.memoryNetwork(
-              placeholder: kTransparentImage,
-              image: meal.imageUrl,
-              width: double.infinity,
-              fit: BoxFit.cover,
-              height: 200,
+            Hero(
+              tag: meal.id,
+              child: FadeInImage.memoryNetwork(
+                placeholder: kTransparentImage,
+                image: meal.imageUrl,
+                width: double.infinity,
+                fit: BoxFit.cover,
+                height: 200,
+              ),
             ),
             Positioned(
               right: 0,
